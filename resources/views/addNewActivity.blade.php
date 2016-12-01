@@ -53,7 +53,7 @@ Add Activity
                         <div class="col-sm-6 myColumn">
                             <div class="dropdown">
                                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                    Chose category
+                                    Choose category
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -61,6 +61,29 @@ Add Activity
                                     <li><a href="#">category2</a></li>
                                     <li><a href="#">category3</a></li>
                                     <li><a href="#">category4</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group center-form" >
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label for="module" class="control-label">Module</label>
+                        </div>
+
+                        <div class="col-sm-6 myColumn">
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    Choose Module
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li><a href="#">modeule1</a></li>
+                                    <li><a href="#">module2</a></li>
+                                    <li><a href="#">module3</a></li>
+                                    <li><a href="#">module4</a></li>
                                 </ul>
                             </div>
                         </div>
