@@ -1,7 +1,7 @@
 @extends("template")
 
 @section("title")
-Login
+Home
 @endsection
 
 @section("styles")
@@ -10,7 +10,7 @@ Login
 
 @section("links")
 <li><a href="{{route('login')}}">Login</a></li>
-<li><a href="#">Register</a></li>
+<li><a href="{{ route('register') }}">Register</a></li>
 @endsection
 
 

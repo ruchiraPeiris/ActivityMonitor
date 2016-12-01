@@ -10,13 +10,13 @@ Login
 
 @section("links")
 <li><a href="{{route('login')}}">Login</a></li>
-<li><a href="#">Register</a></li>
+<li><a href="{{ route('register') }}">Register</a></li>
 @endsection
 
 @section("body")
-<div class="container">
+<div class="container" >
     <div class="panel panel-default myPanel" >
-        <div class="panel-heading">Sign in</div>
+        <div class="panel-heading" >Sign in</div>
         <div class="panel-body">
             <form class="form-horizontal">
                 <div class="form-group center-form ">
@@ -57,6 +57,7 @@ Login
                 <div class="form-group center-form">
                     <div class="col-sm-offset-2 col-sm-10">
                         <button type="submit" class="btn btn-default">Sign in</button>
+                        <input type="hidden" value="{{ Session::token() }}" name="_token">
                     </div>
                 </div>
             </form>

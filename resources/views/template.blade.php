@@ -18,6 +18,11 @@
         .navbar.navbar-inverse{
             opacity: .6;
         }
+
+        #brand{
+            color: white;
+            font-weight: bolder;
+        }
     </style>
 
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -36,7 +41,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ route('index') }}">CSE</a>
+            <a class="navbar-brand" id="brand" href="{{ route('index') }}">CSE</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
