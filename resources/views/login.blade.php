@@ -5,15 +5,12 @@ Login
 @endsection
 
 @section("styles")
-<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="src/css/login.css">
 @endsection
 
-@section("link1")
-Login
-@endsection
-
-@section("link2")
-Register
+@section("links")
+<li><a href="{{route('login')}}">Login</a></li>
+<li><a href="#">Register</a></li>
 @endsection
 
 @section("body")
