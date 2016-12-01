@@ -39,8 +39,7 @@ Admin Dashboard
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#home">Requests</a></li>
             <li><a data-toggle="tab" href="#menu1">Instructors</a></li>
-            <li><a data-toggle="tab" href="#menu2">Students</a></li>
-            <li><a data-toggle="tab" href="#menu3">Modules</a></li>
+            <li><a data-toggle="tab" href="#menu2">Modules</a></li>
         </ul>
 
         <div class="tab-content">
@@ -168,13 +167,94 @@ Admin Dashboard
             </div>
 
             <div id="menu2" class="tab-pane fade">
-                <h3>Menu 2</h3>
-                <p>Some content in menu 2.</p>
+                <h3 id="whiteText">Add module</h3>
+                <div class="container" >
+                    <div class="panel panel-default myPanel" >
+                        <div class="panel-heading">Add Module</div>
+                        <div class="panel-body">
+                            <form class="form-horizontal">
+                                <div class="form-group center-form" >
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                            <label for="category" class="control-label">Category</label>
+                                        </div>
+
+                                        <div class="col-sm-6 myColumn">
+                                            <div class="dropdown">
+                                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                    Choose category
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                    <li><a href="#">category1</a></li>
+                                                    <li><a href="#">category2</a></li>
+                                                    <li><a href="#">category3</a></li>
+                                                    <li><a href="#">category4</a></li>
+                                                </ul>
+                                                <button class="btn btn-default">New</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <form class="form-horizontal">
+                                    <div class="form-group center-form " style="display: none">
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                <label for="name" class="control-label">Name</label>
+                                            </div>
+
+                                            <div class="col-sm-6 myColumn">
+                                                <input type="text" class="form-control" name="name" placeholder="Category Name">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group center-form" style="display: none">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <button type="submit" class="btn btn-default">Add</button>
+                                            <input type="hidden" value="{{ Session::token() }}" name="_token">
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <div class="form-group center-form" >
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                            <label for="module" class="control-label">Module</label>
+                                        </div>
+
+                                        <div class="col-sm-6 myColumn">
+                                            <div class="dropdown">
+                                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                    Choose Module
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                    <li><a href="#">modeule1</a></li>
+                                                    <li><a href="#">module2</a></li>
+                                                    <li><a href="#">module3</a></li>
+                                                    <li><a href="#">module4</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group center-form">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-default">Add</button>
+                                        <input type="hidden" value="{{ Session::token() }}" name="_token">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div id="menu3" class="tab-pane fade">
-                <h3>Menu 3</h3>
-                <p>Some content in menu 2.</p>
-            </div>
+
         </div>
     </div>
 
