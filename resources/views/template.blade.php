@@ -10,13 +10,23 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     @yield("styles")
 
+    <style>
+        body{
+            background: url(src/images/background.jpg) no-repeat center fixed;
+            background-size: cover;
+        }
+        .navbar.navbar-inverse{
+            opacity: .6;
+        }
+    </style>
+
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
 </head>
 <body>
 
-<nav class="navbar navbar-inverse " style="opacity: 0.7">
+<nav class="navbar navbar-inverse ">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
