@@ -30,3 +30,7 @@ Route::get('/dashboard', function(){
 Route::get('/addActivity', function(){
    return view('addNewActivity');
 });
+
+Route::get('/admin', function(){
+   return view('adminDashboard');
+});
