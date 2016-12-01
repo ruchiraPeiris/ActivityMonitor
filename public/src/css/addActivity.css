@@ -1,0 +1,27 @@
+.center-form.form-group{
+    margin-left: 25%;
+}
+
+.panel.panel-default.myPanel{
+    width: 80%;
+    margin-left: 10%;
+
+}
+
+.col-sm-6.myColumn{
+    margin-right: 20%;
+}
+
+
+.panel-transparent {
+    background: none;
+}
+
+
+.panel-transparent .panel-heading{
+    background: rgba(122, 130, 136, 0.2)!important;
+}
+
+.panel-transparent .panel-body{
+    background: rgba(46, 51, 56, 0.2)!important;
+}

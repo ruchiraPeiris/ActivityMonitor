@@ -11,7 +11,8 @@ Dashboard
 @section("links")
 <li><button class="btn btn-success navbar-btn"><span class="glyphicon glyphicon glyphicon-plus-sign
 " aria-hidden="true"></span> Add new Activity</button></li>
-<li><a href="{{route('index')}}">Home</a></li>
+<li><a href="{{route('index')}}"><span class="glyphicon glyphicon glyphicon-home
+" aria-hidden="true"></span> Home</a></li>
 
 @endsection
 

@@ -9,8 +9,8 @@ Register
 @endsection
 
 @section("links")
-<li><a href="{{route('login')}}">Login</a></li>
-<li><a href="{{ route('register') }}">Register</a></li>
+<li><a href="{{route('login')}}"><span class="glyphicon glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</a></li>
+<li><a href="{{ route('register') }}"><span class="glyphicon glyphicon glyphicon-user" aria-hidden="true"></span> Register</a></li>
 @endsection
 
 @section("body")

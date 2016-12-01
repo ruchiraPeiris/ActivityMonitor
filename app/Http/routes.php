@@ -26,3 +26,7 @@ Route::get('/register', function(){
 Route::get('/dashboard', function(){
    return view('dashboard');
 })->name('dashboard');
+
+Route::get('/addActivity', function(){
+   return view('addNewActivity');
+});
