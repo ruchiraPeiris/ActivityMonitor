@@ -14,8 +14,8 @@ Register
 @endsection
 
 @section("body")
-<div class="container">
-    <div class="panel panel-default myPanel" >
+<div class="container" >
+    <div class="panel panel-default myPanel " >
         <div class="panel-heading">Fill data</div>
         <div class="panel-body">
             <form class="form-horizontal">

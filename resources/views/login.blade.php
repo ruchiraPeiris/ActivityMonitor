@@ -15,8 +15,8 @@ Login
 
 @section("body")
 <div class="container" >
-    <div class="panel panel-default myPanel" >
-        <div class="panel-heading">Sign in</div>
+    <div class="panel panel-default myPanel panel-transparent" >
+        <div class="panel-heading" style="color: white">Sign in</div>
         <div class="panel-body">
             <form class="form-horizontal">
                 <div class="form-group center-form ">

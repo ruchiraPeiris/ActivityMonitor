@@ -15,7 +15,7 @@ Add Activity
 
 @section("body")
 <div class="container" >
-    <div class="panel panel-default myPanel" >
+    <div class="panel panel-default myPanel " >
         <div class="panel-heading">Add New Activity</div>
         <div class="panel-body">
             <form class="form-horizontal">
