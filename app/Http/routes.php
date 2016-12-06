@@ -19,9 +19,10 @@ Route::get('/login', function(){
    return view('login');
 })->name('login');
 
-Route::get('/register', function(){
-    return view('register');
-})->name('register');
+Route::get('/register', [
+    'uses' => 'student_controller@getRegister',
+    'as' => 'register'
+]);
 
 Route::get('/dashboard', function(){
    return view('dashboard');
@@ -34,3 +35,8 @@ Route::get('/addActivity', function(){
 Route::get('/admin', function(){
    return view('adminDashboard');
 });
+
+Route::post('/add_student', [
+   'uses'=> 'student_controller@register',
+    'as' => 'add_student'
+]);

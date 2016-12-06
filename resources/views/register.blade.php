@@ -18,7 +18,7 @@ Register
     <div class="panel panel-default myPanel " >
         <div class="panel-heading">Fill data</div>
         <div class="panel-body">
-            <form class="form-horizontal">
+            <form class="form-horizontal" action="{{ route('add_student') }}" method="post">
                 <div class="form-group center-form ">
                     <div class="row">
                         <div class="col-sm-2">
