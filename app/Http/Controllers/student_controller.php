@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\student;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -20,6 +21,17 @@ class student_controller extends Controller{
             'email' => 'required|email',
             'password' => 'required'
         ]);
+
+        $student = new student();
+        $student->first_name = $request['firstname'];
+        $student->last_name = $request['lastname'];
+        $student->email = $request['email'];
+        $student->id = $request['index'];
+        $student->password = bcrypt($request['password']);
+        $student->save();
+
+        return redirect()->route('register');
+
     }
 
 
