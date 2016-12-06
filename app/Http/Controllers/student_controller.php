@@ -7,11 +7,36 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class student_controller extends Controller{
     public function getRegister(){
         return view('register');
     }
+
+    public function getLogin(){
+        return view('login');
+    }
+
+    public function postLogin(Request $request){
+        $this->validate($request, [
+            'index' => 'required',
+            'password' => 'required'
+        ]);
+
+        if(!Auth::attempt(['id' => $request['index'], 'password' => $request['password']])){
+            return redirect()->route('login')->with('fail', 'Login Failed!');
+        }
+
+        $student = student::where('id', $request['index'])->first();
+
+        return redirect()->route('dashboard');
+    }
+
+   public function getDashboard(){
+        return view('dashboard');
+   }
+
 
     public function register(Request $request){
         $this->validate($request, [

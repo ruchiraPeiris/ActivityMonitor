@@ -5,7 +5,7 @@ Dashboard
 @endsection
 
 @section("styles")
-<link rel="stylesheet" href="src/css/dashboard.css">
+<link rel="stylesheet" type="text/css" href="src/css/dashboard.css">
 @endsection
 
 @section("links")
@@ -33,7 +33,7 @@ Dashboard
 @section("body")
     <div class="container">
         <div class="page-header myHeader">
-            <h1 id="welcomeText">Welcome <small>Username</small></h1>
+            <h1 id="welcomeText">Welcome <small>{{{ Auth::user()->first_name }}}</small></h1>
         </div>
     </div>
     <div class="container">

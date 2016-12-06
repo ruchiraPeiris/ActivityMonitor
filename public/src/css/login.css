@@ -24,3 +24,19 @@
 .panel-transparent .panel-body{
     background: rgba(46, 51, 56, 0.2)!important;
 }
+
+label{
+    color: white;
+}
+
+.error-box{
+    color: white;
+    background-color: #f49789;
+    border: 1px solid #e85d47;
+    width: 75%;
+    margin: auto;
+    margin-bottom: 10px;
+    text-align: center;
+    list-style: none;
+    font-weight: bold;
+}

@@ -14,19 +14,35 @@ Login
 @endsection
 
 @section("body")
+
+@if(count($errors)>0)
+<div id="error-box">
+    <ul class="error-box">
+        @foreach($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+
+@if(Session::has('fail'))
+    <div class="error-box"><p>Login Failed!</p></div>
+
+@endif
+
 <div class="container" >
     <div class="panel panel-default myPanel panel-transparent" >
         <div class="panel-heading" style="color: white">Sign in</div>
         <div class="panel-body">
-            <form class="form-horizontal">
+            <form class="form-horizontal" action="login" method="post">
                 <div class="form-group center-form ">
                     <div class="row">
                         <div class="col-sm-2">
-                            <label for="email" class="control-label">Email</label>
+                            <label for="index" class="control-label">Index</label>
                         </div>
 
                         <div class="col-sm-6 myColumn">
-                            <input type="email" class="form-control" name="email" placeholder="Email">
+                            <input type="text" class="form-control" name="index" placeholder="Index Number">
                         </div>
                     </div>
 

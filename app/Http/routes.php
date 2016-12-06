@@ -15,18 +15,25 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
-Route::get('/login', function(){
-   return view('login');
-})->name('login');
+Route::get('/login', [
+    'uses' => 'student_controller@getLogin',
+    'as' => 'login'
+]);
+
+Route::post('/login', [
+    'uses' => 'student_controller@postLogin',
+    'as' => 'login'
+]);
 
 Route::get('/register', [
     'uses' => 'student_controller@getRegister',
     'as' => 'register'
 ]);
 
-Route::get('/dashboard', function(){
-   return view('dashboard');
-})->name('dashboard');
+Route::get('/dashboard', [
+    'uses' => 'student_controller@getDashboard',
+    'as' => 'dashboard'
+]);
 
 Route::get('/addActivity', function(){
    return view('addNewActivity');
