@@ -13,7 +13,13 @@ class student_controller extends Controller{
     }
 
     public function register(Request $request){
-
+        $this->validate($request, [
+            'index' => 'required',
+            'firstname' => 'required|alpha',
+            'lastname' => 'required|alpha',
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
     }
 
 

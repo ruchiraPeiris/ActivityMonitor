@@ -13,7 +13,7 @@ class CreateStudentsTable extends Migration
     public function up()
     {
         Schema::create('students', function (Blueprint $table) {
-            $table->increments('id');
+            $table->string('id');
             $table->timestamps();
             $table->string('first_name');
             $table->string('last_name');

@@ -5,7 +5,7 @@ Register
 @endsection
 
 @section("styles")
-<link rel="stylesheet" href="src/css/register.css">
+<link href="src/css/register.css" rel="stylesheet" type="text/css">
 @endsection
 
 @section("links")
@@ -13,10 +13,21 @@ Register
 <li><a href="{{ route('register') }}"><span class="glyphicon glyphicon glyphicon-user" aria-hidden="true"></span> Register</a></li>
 @endsection
 
+
 @section("body")
+@if(count($errors)>0)
+<div id="error-box">
+    <ul class="error-box">
+        @foreach($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+
 <div class="container" >
-    <div class="panel panel-default myPanel " >
-        <div class="panel-heading">Fill data</div>
+    <div class="panel panel-default myPanel panel-transparent " >
+        <div class="panel-heading" style="color: white">Fill data</div>
         <div class="panel-body">
             <form class="form-horizontal" action="{{ route('add_student') }}" method="post">
                 <div class="form-group center-form ">
@@ -39,7 +50,7 @@ Register
                         </div>
 
                         <div class="col-sm-6 myColumn">
-                            <input type="text" class="form-control" name="name" placeholder="First Name">
+                            <input type="text" class="form-control" name="firstname" placeholder="First Name">
                         </div>
                     </div>
                 </div>
@@ -51,7 +62,7 @@ Register
                         </div>
 
                         <div class="col-sm-6 myColumn">
-                            <input type="text" class="form-control" name="name" placeholder="Last Name">
+                            <input type="text" class="form-control" name="lastname" placeholder="Last Name">
                         </div>
                     </div>
                 </div>
