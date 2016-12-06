@@ -25,6 +25,13 @@ Register
 </div>
 @endif
 
+@if(Session::has('success'))
+    <div class="success-box">
+        <p>Registeration Successful!</p>
+    </div>
+
+@endif
+
 <div class="container" >
     <div class="panel panel-default myPanel panel-transparent " >
         <div class="panel-heading" style="color: white">Fill data</div>

@@ -30,7 +30,7 @@ class student_controller extends Controller{
         $student->password = bcrypt($request['password']);
         $student->save();
 
-        return redirect()->route('register');
+        return redirect()->route('register')->with('success', 'true');
 
     }
 

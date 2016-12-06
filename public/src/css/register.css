@@ -35,4 +35,16 @@
     margin-bottom: 10px;
     text-align: center;
     list-style: none;
+    font-weight: bold;
+}
+
+.success-box{
+    color: white;
+    background-color: #77d365;
+    border: 1px solid #509941;
+    width: 75%;
+    margin: auto;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
 }
