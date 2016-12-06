@@ -25,7 +25,7 @@ Dashboard
     <li><a href="#"><span class="glyphicon glyphicon glyphicon-user
 " aria-hidden="true"></span> Profile</a></li>
     <li role="separator" class="divider"></li>
-    <li><a href="#"><span class="glyphicon glyphicon glyphicon-log-out
+    <li><a href="{{ route('logout') }}"><span class="glyphicon glyphicon glyphicon-log-out
 " aria-hidden="true"></span> Logout</a></li>
 </ul>
 @endsection

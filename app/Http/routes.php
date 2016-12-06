@@ -32,7 +32,13 @@ Route::get('/register', [
 
 Route::get('/dashboard', [
     'uses' => 'student_controller@getDashboard',
+    'middleware' => 'auth',
     'as' => 'dashboard'
+]);
+
+Route::get('/logout', [
+    'uses' => 'student_controller@getLogout',
+    'as' => 'logout'
 ]);
 
 Route::get('/addActivity', function(){

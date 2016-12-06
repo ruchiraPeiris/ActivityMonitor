@@ -15,6 +15,9 @@ class student_controller extends Controller{
     }
 
     public function getLogin(){
+        if(Auth::check()){
+            return redirect()->route('dashboard');
+        }
         return view('login');
     }
 
@@ -34,7 +37,12 @@ class student_controller extends Controller{
     }
 
    public function getDashboard(){
-        return view('dashboard');
+       return view('dashboard');
+   }
+
+   public function getLogout(){
+       Auth::logout();
+       return redirect()->route('login');
    }
 
 
