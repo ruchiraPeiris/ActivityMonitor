@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'CreateCategoriesTable' => $baseDir . '/database/migrations/2016_12_07_093057_create_categories_table.php',
+    'CreateModulesTable' => $baseDir . '/database/migrations/2016_12_07_094143_create_modules_table.php',
     'CreateStudentsTable' => $baseDir . '/database/migrations/2016_12_06_152742_create_students_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
@@ -518,4 +519,5 @@ return array(
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
     'categorySeeder' => $baseDir . '/database/seeds/categorySeeder.php',
+    'moduleSeeder' => $baseDir . '/database/seeds/moduleSeeder.php',
 );
