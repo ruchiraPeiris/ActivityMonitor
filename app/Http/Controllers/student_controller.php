@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
 
 class student_controller extends Controller{
     public function getRegister(){
@@ -70,6 +71,59 @@ class student_controller extends Controller{
     public function getAddActivity(){
         return view('addNewActivity');
     }
+
+    public function getEditProfile(){
+        return view('editProfile');
+    }
+
+    public function changeData(){
+        $success = null;
+        $student = student::where('id', Auth::user()->id)->first();
+        if(Input::has('firstname')){
+            $student->first_name = ucfirst(Input::get('firstname'));
+            $success = 'true';
+        }
+
+        if(Input::has('lastname')){
+            $student->last_name = ucfirst(Input::get('lastname'));
+            $success = 'true';
+        }
+
+        if(Input::has('email')){
+            $student->email = Input::get('email');
+            $success = 'true';
+        }
+
+        $student->save();
+        return redirect()->route('editProfile')->with('success', $success);
+    }
+
+    public function editPassword(Request $request){
+
+        $this->validate($request, [
+            'password' => 'min:5'
+        ]);
+
+        $success = null;
+        $fail = null;
+        $student = student::where('id', Auth::user()->id)->first();
+
+        if (Input::get('password') === Input::get('repassword') and Input::has('password')) {
+            $student->password = bcrypt(Input::get('password'));
+            $student->save();
+            $success = 'true';
+        }
+
+        else{
+            $fail = 'true';
+        }
+
+
+        return redirect()->route('editProfile')->with(array('success'=> $success, 'fail'=> $fail));
+
+
+    }
+
 
 
 }

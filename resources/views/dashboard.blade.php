@@ -23,7 +23,7 @@ Dashboard
 <ul class="dropdown-menu">
     <li><a href="{{ route('addActivity') }}"><span class="glyphicon glyphicon glyphicon-plus-sign
 " aria-hidden="true"></span> Add new activity</a></li>
-    <li><a href="#"><span class="glyphicon glyphicon glyphicon-user
+    <li><a href="{{ route('editProfile') }}"><span class="glyphicon glyphicon glyphicon-user
 " aria-hidden="true"></span> Profile</a></li>
     <li role="separator" class="divider"></li>
     <li><a href="{{ route('logout') }}"><span class="glyphicon glyphicon glyphicon-log-out

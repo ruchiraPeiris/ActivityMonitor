@@ -13,6 +13,20 @@ Add Activity
 " aria-hidden="true"></span> Home</a></li>
 @endsection
 
+@section('dropdown')
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->first_name }}<span class="caret"></span></a>
+    <ul class="dropdown-menu">
+        <li><a href="{{ route('addActivity') }}"><span class="glyphicon glyphicon glyphicon-plus-sign
+" aria-hidden="true"></span> Add new activity</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon glyphicon-user
+" aria-hidden="true"></span> Profile</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="{{ route('logout') }}"><span class="glyphicon glyphicon glyphicon-log-out
+" aria-hidden="true"></span> Logout</a></li>
+    </ul>
+    @endsection
+
 @section("body")
 <div class="container" >
     <div class="panel panel-default myPanel panel-transparent" >

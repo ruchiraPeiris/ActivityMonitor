@@ -1,0 +1,53 @@
+.center-form.form-group{
+    margin-left: 25%;
+}
+
+.panel.panel-default.myPanel{
+    width: 80%;
+    margin-left: 10%;
+
+}
+
+.col-sm-6.myColumn{
+    margin-right: 20%;
+}
+
+label{
+    color: white;
+}
+
+.panel-transparent {
+    background: none;
+}
+
+
+.panel-transparent .panel-heading{
+    background: rgba(122, 130, 136, 0.2)!important;
+}
+
+.panel-transparent .panel-body{
+    background: rgba(46, 51, 56, 0.2)!important;
+}
+
+.success-box{
+    color: white;
+    background-color: #77d365;
+    border: 1px solid #509941;
+    width: 75%;
+    margin: auto;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.error-box{
+    color: white;
+    background-color: #f49789;
+    border: 1px solid #e85d47;
+    width: 75%;
+    margin: auto;
+    margin-bottom: 10px;
+    text-align: center;
+    list-style: none;
+    font-weight: bold;
+}

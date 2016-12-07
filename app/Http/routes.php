@@ -55,3 +55,21 @@ Route::post('/add_student', [
    'uses'=> 'student_controller@register',
     'as' => 'add_student'
 ]);
+
+Route::get('/editProfile', [
+    'uses' => 'student_controller@getEditProfile',
+    'middleware' => 'auth',
+    'as' => 'editProfile'
+]);
+
+Route::post('/changeData', [
+    'uses' => 'student_controller@changeData',
+    'middleware' => 'auth',
+    'as' => 'changeData'
+]);
+
+Route::post('/editPassword', [
+    'uses' => 'student_controller@editPassword',
+    'middleware' => 'auth',
+    'as' => 'editPassword'
+]);
