@@ -41,9 +41,11 @@ Route::get('/logout', [
     'as' => 'logout'
 ]);
 
-Route::get('/addActivity', function(){
-   return view('addNewActivity');
-});
+Route::get('/addActivity', [
+    'uses' => 'student_controller@getAddActivity',
+    'middleware' => 'auth',
+    'as' => 'addActivity'
+]);
 
 Route::get('/admin', function(){
    return view('adminDashboard');

@@ -9,8 +9,9 @@ Dashboard
 @endsection
 
 @section("links")
+
 <li><button class="btn btn-success navbar-btn"><span class="glyphicon glyphicon glyphicon-plus-sign
-" aria-hidden="true"></span> Add new Activity</button></li>
+" aria-hidden="true"></span> <a href="{{ route('addActivity') }}" id="btn-link"> Add new Activity</a></button></li>
 <li><a href="{{route('index')}}"><span class="glyphicon glyphicon glyphicon-home
 " aria-hidden="true"></span> Home</a></li>
 
@@ -20,7 +21,7 @@ Dashboard
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->first_name }}<span class="caret"></span></a>
 <ul class="dropdown-menu">
-    <li><a href="#"><span class="glyphicon glyphicon glyphicon-plus-sign
+    <li><a href="{{ route('addActivity') }}"><span class="glyphicon glyphicon glyphicon-plus-sign
 " aria-hidden="true"></span> Add new activity</a></li>
     <li><a href="#"><span class="glyphicon glyphicon glyphicon-user
 " aria-hidden="true"></span> Profile</a></li>

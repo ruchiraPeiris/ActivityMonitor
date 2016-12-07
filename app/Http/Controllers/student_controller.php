@@ -67,5 +67,9 @@ class student_controller extends Controller{
 
     }
 
+    public function getAddActivity(){
+        return view('addNewActivity');
+    }
+
 
 }

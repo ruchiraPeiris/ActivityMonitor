@@ -1,3 +1,16 @@
 #welcomeText{
     color: white;
 }
+
+#btn-link:hover{
+    text-decoration: none;
+}
+
+#btn-link{
+    color: white;
+}
+
+#btn-link:visited{
+    text-decoration: none;
+    decoration: none;
+}
