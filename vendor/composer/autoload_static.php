@@ -278,6 +278,7 @@ class ComposerStaticInit2555d183ad2d571cb66d098e72ad15ed
     );
 
     public static $classMap = array (
+        'CreateCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_07_093057_create_categories_table.php',
         'CreateStudentsTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_06_152742_create_students_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
@@ -788,6 +789,7 @@ class ComposerStaticInit2555d183ad2d571cb66d098e72ad15ed
         'SessionHandlerInterface' => __DIR__ . '/..' . '/symfony/http-foundation/Resources/stubs/SessionHandlerInterface.php',
         'TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+        'categorySeeder' => __DIR__ . '/../..' . '/database/seeds/categorySeeder.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
