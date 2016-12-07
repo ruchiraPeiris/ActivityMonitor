@@ -56,8 +56,8 @@ class student_controller extends Controller{
         ]);
 
         $student = new student();
-        $student->first_name = $request['firstname'];
-        $student->last_name = $request['lastname'];
+        $student->first_name = ucfirst($request['firstname']);
+        $student->last_name = ucfirst($request['lastname']);
         $student->email = $request['email'];
         $student->id = $request['index'];
         $student->password = bcrypt($request['password']);
