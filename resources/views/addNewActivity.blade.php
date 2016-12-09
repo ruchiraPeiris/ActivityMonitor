@@ -32,7 +32,7 @@ Add Activity
     <div class="panel panel-default myPanel panel-transparent" >
         <div class="panel-heading" style="color: white">Add New Activity</div>
         <div class="panel-body">
-            <form class="form-horizontal">
+            <form class="form-horizontal" action="{{ route('addActivity') }}" method="post">
                 <div class="form-group center-form ">
                     <div class="row">
                         <div class="col-sm-2">
@@ -82,7 +82,9 @@ Add Activity
 
                         <div class="col-sm-6 myColumn">
                             <select id="module" class="form-control" name="module">
-
+                                @foreach($modules as $module)
+                                    <option value="{{ $module->id }}">{{ $module->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -108,7 +110,7 @@ Add Activity
                         </div>
 
                         <div class="col-sm-4 myColumn">
-                            <input class="form-control" type="date" data-date-inline-picker="true" />
+                            <input class="form-control" type="date" name="joined_date" data-date-inline-picker="true" />
                         </div>
                     </div>
                 </div>

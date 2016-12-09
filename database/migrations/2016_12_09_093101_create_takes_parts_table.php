@@ -15,9 +15,9 @@ class CreateTakesPartsTable extends Migration
         Schema::create('takes_parts', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->integer('student_id');
+            $table->string('student_id');
             $table->integer('activity_id');
-            $table->integer('status');
+            $table->string('status');
         });
     }
 

@@ -79,3 +79,8 @@ Route::get('/dropdown', function(){
     $modules = \App\module::where('cat_id', $cat_id)->get();
     return Response::json($modules);
 });
+
+Route::post('/addActivity', [
+    'uses' => 'student_controller@addActivity',
+    'as' => 'addActivity'
+]);

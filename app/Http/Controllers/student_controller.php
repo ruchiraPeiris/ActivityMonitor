@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Activity;
 use App\category;
 use App\module;
 use App\student;
+use App\takes_part;
 use Illuminate\Auth\Access\Response;
 use Illuminate\Http\Request;
 
@@ -73,7 +75,8 @@ class student_controller extends Controller{
 
     public function getAddActivity(){
         $categories = category::all();
-        return view('addNewActivity', ['categories' => $categories]);
+        $modules = module::where('cat_id', '1')->get();
+        return view('addNewActivity', ['categories' => $categories, 'modules' => $modules]);
     }
 
     public function getEditProfile(){
@@ -122,6 +125,24 @@ class student_controller extends Controller{
             $fail = 'true';
         }
         return redirect()->route('editProfile')->with(array('success'=> $success, 'fail'=> $fail));
+    }
+
+    public function addActivity(Request $request){
+        $activity = new Activity();
+        $activity->name = $request['activity'];
+        $activity->post = $request['post'];
+        $activity->cat_id = Input::get('catSelect');
+        $activity->module_id = Input::get('module');
+        $activity->description = $request['description'];
+        $activity->joined_date = $request['joined_date'];
+        $activity->save();
+
+        $takes = new takes_part();
+        $takes->student_id = Auth::user()->id;
+        $takes->activity_id = $activity->id;
+        $takes->status = 'pending';
+        $takes->save();
+
     }
 
 }
