@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\category;
+use App\module;
 use App\student;
+use Illuminate\Auth\Access\Response;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -69,7 +72,8 @@ class student_controller extends Controller{
     }
 
     public function getAddActivity(){
-        return view('addNewActivity');
+        $categories = category::all();
+        return view('addNewActivity', ['categories' => $categories]);
     }
 
     public function getEditProfile(){
@@ -117,13 +121,7 @@ class student_controller extends Controller{
         else{
             $fail = 'true';
         }
-
-
         return redirect()->route('editProfile')->with(array('success'=> $success, 'fail'=> $fail));
-
-
     }
-
-
 
 }

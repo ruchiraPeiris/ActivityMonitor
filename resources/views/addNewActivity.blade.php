@@ -19,7 +19,7 @@ Add Activity
     <ul class="dropdown-menu">
         <li><a href="{{ route('addActivity') }}"><span class="glyphicon glyphicon glyphicon-plus-sign
 " aria-hidden="true"></span> Add new activity</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon glyphicon-user
+        <li><a href="{{ route('editProfile') }}"><span class="glyphicon glyphicon glyphicon-user
 " aria-hidden="true"></span> Profile</a></li>
         <li role="separator" class="divider"></li>
         <li><a href="{{ route('logout') }}"><span class="glyphicon glyphicon glyphicon-log-out
@@ -65,18 +65,11 @@ Add Activity
                         </div>
 
                         <div class="col-sm-6 myColumn">
-                            <div class="dropdown">
-                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                    Choose category
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <li><a href="#">category1</a></li>
-                                    <li><a href="#">category2</a></li>
-                                    <li><a href="#">category3</a></li>
-                                    <li><a href="#">category4</a></li>
-                                </ul>
-                            </div>
+                            <select id="catSelect" class="form-control" name="catSelect">
+                                @foreach($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -88,18 +81,9 @@ Add Activity
                         </div>
 
                         <div class="col-sm-6 myColumn">
-                            <div class="dropdown">
-                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                    Choose Module
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <li><a href="#">modeule1</a></li>
-                                    <li><a href="#">module2</a></li>
-                                    <li><a href="#">module3</a></li>
-                                    <li><a href="#">module4</a></li>
-                                </ul>
-                            </div>
+                            <select id="model" class="form-control" name="model">
+
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -131,7 +115,7 @@ Add Activity
 
                 <div class="form-group center-form">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default">Submit</button>
+                        <button id="button" type="submit" class="btn btn-default">Submit</button>
                         <input type="hidden" value="{{ Session::token() }}" name="_token">
                     </div>
                 </div>
@@ -139,6 +123,29 @@ Add Activity
         </div>
     </div>
 </div>
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+
+    <script>
+
+        $(document).ready(function(){
+            $('#catSelect').on('change', function(e){
+                console.log(e);
+
+                var cat_id = e.target.value;
+
+                $.get('/ActivityMonitor/public/dropdown?cat_id='+cat_id, function (data) {
+                    $('#model').empty();
+                    $.each(data, function (index, moduleObj) {
+                       $('#model').append('<option value="'+moduleObj.id+'">'+moduleObj.name+'</option>')
+                    });
+                });
+            });
+        });
+    </script>
 
 
 @endsection
+

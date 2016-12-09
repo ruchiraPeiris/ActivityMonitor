@@ -73,3 +73,9 @@ Route::post('/editPassword', [
     'middleware' => 'auth',
     'as' => 'editPassword'
 ]);
+
+Route::get('/dropdown', function(){
+    $cat_id = \Illuminate\Support\Facades\Input::get('cat_id');
+    $modules = \App\module::where('cat_id', $cat_id)->get();
+    return Response::json($modules);
+});
