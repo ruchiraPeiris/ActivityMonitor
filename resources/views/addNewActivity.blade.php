@@ -9,7 +9,7 @@ Add Activity
 @endsection
 
 @section("links")
-<li><a href="{{route('index')}}"><span class="glyphicon glyphicon glyphicon-home
+<li><a href="{{route('dashboard')}}"><span class="glyphicon glyphicon glyphicon-home
 " aria-hidden="true"></span> Home</a></li>
 @endsection
 

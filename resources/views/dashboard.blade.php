@@ -12,7 +12,7 @@ Dashboard
 
 <li><button class="btn btn-success navbar-btn"><span class="glyphicon glyphicon glyphicon-plus-sign
 " aria-hidden="true"></span> <a href="{{ route('addActivity') }}" id="btn-link"> Add new Activity</a></button></li>
-<li><a href="{{route('index')}}"><span class="glyphicon glyphicon glyphicon-home
+<li><a href="{{route('dashboard')}}"><span class="glyphicon glyphicon glyphicon-home
 " aria-hidden="true"></span> Home</a></li>
 
 @endsection
