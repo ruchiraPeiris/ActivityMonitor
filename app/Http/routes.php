@@ -81,6 +81,6 @@ Route::get('/dropdown', function(){
 });
 
 Route::post('/addActivity', [
-    'uses' => 'student_controller@addActivity',
-    'as' => 'addActivity'
+    'uses' => 'student_controller@postAddActivity',
+    'as' => 'postAddActivity'
 ]);

@@ -127,7 +127,15 @@ class student_controller extends Controller{
         return redirect()->route('editProfile')->with(array('success'=> $success, 'fail'=> $fail));
     }
 
-    public function addActivity(Request $request){
+    public function postAddActivity(Request $request){
+
+        $this->validate($request, [
+            'activity' => 'required',
+            'post' => 'required',
+            'joined_date' => 'required|date',
+            'description' => 'required'
+        ]);
+
         $activity = new Activity();
         $activity->name = $request['activity'];
         $activity->post = $request['post'];
@@ -142,6 +150,8 @@ class student_controller extends Controller{
         $takes->activity_id = $activity->id;
         $takes->status = 'pending';
         $takes->save();
+
+        return redirect()->route('addActivity')->with('success', 'true');
 
     }
 

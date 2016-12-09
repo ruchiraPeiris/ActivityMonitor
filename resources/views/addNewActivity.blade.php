@@ -28,11 +28,31 @@ Add Activity
     @endsection
 
 @section("body")
+
+    @section("body")
+    @if(count($errors)>0)
+    <div id="error-box">
+        <ul class="error-box">
+            @foreach($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
+    @if(Session::has('success'))
+    <div class="success-box">
+        <p>Adding Successful!</p>
+    </div>
+    @endif
+
+
+
 <div class="container" >
     <div class="panel panel-default myPanel panel-transparent" >
         <div class="panel-heading" style="color: white">Add New Activity</div>
         <div class="panel-body">
-            <form class="form-horizontal" action="{{ route('addActivity') }}" method="post">
+            <form class="form-horizontal" action="{{ route('postAddActivity') }}" method="post">
                 <div class="form-group center-form ">
                     <div class="row">
                         <div class="col-sm-2">
