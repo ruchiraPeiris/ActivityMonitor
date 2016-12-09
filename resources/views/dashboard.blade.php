@@ -41,7 +41,27 @@ Dashboard
         <div class="panel panel-danger">
             <div class="panel-heading">Pending activities</div>
             <div class="panel-body">
-                Pending activities will appear here
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <td>Activity</td>
+                        <td>Post</td>
+                        <td>Joined Date</td>
+                    </tr>
+
+                    <tbody>
+                        @foreach($pendingObjs as $obj)
+                        <tr>
+                            <td>{{ $obj->name }}</td>
+                            <td>{{ $obj->post }}</td>
+                            <td>{{ $obj->joined_date }}</td>
+                            <td><button class="btn btn-sm btn-danger">Cancel</button></td>
+                        </tr>
+                        @endforeach
+
+                    </tbody>
+                    </thead>
+                </table>
             </div>
         </div>
     </div>

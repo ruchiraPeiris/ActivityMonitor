@@ -43,7 +43,13 @@ class student_controller extends Controller{
     }
 
    public function getDashboard(){
-       return view('dashboard');
+        $pendingActivityObj = array();
+        $activities = takes_part::where(['student_id' => Auth::user()->id, 'status' => 'pending'])->get();
+        foreach ($activities as $activity){
+            $pendingAct = Activity::where('id', $activity->id)->first();
+            array_push($pendingActivityObj, $pendingAct);
+        }
+       return view('dashboard', ['pendingObjs' => $pendingActivityObj]);
    }
 
    public function getLogout(){
@@ -152,7 +158,6 @@ class student_controller extends Controller{
         $takes->save();
 
         return redirect()->route('addActivity')->with('success', 'true');
-
     }
 
 }
