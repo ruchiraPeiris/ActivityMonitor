@@ -81,7 +81,7 @@ Add Activity
                         </div>
 
                         <div class="col-sm-6 myColumn">
-                            <select id="model" class="form-control" name="model">
+                            <select id="module" class="form-control" name="module">
 
                             </select>
                         </div>
@@ -137,9 +137,9 @@ Add Activity
                 var cat_id = e.target.value;
 
                 $.get('/ActivityMonitor/public/dropdown?cat_id='+cat_id, function (data) {
-                    $('#model').empty();
+                    $('#module').empty();
                     $.each(data, function (index, moduleObj) {
-                       $('#model').append('<option value="'+moduleObj.id+'">'+moduleObj.name+'</option>')
+                       $('#module').append('<option value="'+moduleObj.id+'">'+moduleObj.name+'</option>')
                     });
                 });
             });
