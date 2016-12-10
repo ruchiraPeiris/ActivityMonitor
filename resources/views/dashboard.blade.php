@@ -55,7 +55,7 @@ Dashboard
                             <td>{{ $obj->name }}</td>
                             <td>{{ $obj->post }}</td>
                             <td>{{ $obj->joined_date }}</td>
-                            <td><button class="btn btn-sm btn-danger">Cancel</button></td>
+                            <td><button class="btn btn-sm btn-danger">Delete</button></td>
                         </tr>
                         @endforeach
 
