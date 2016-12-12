@@ -47,9 +47,10 @@ Route::get('/addActivity', [
     'as' => 'addActivity'
 ]);
 
-Route::get('/admin', function(){
-   return view('adminDashboard');
-});
+Route::get('/admin', [
+    'uses' => 'admin_controller@getDashboard',
+    'as' => 'adminDashboard'
+]);
 
 Route::post('/add_student', [
    'uses'=> 'student_controller@register',

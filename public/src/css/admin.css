@@ -15,3 +15,43 @@
 #whiteText{
     color: white;
 }
+
+label{
+    color: white;
+}
+
+.panel-transparent {
+    background: none;
+}
+
+
+.panel-transparent .panel-heading{
+    background: rgba(122, 130, 136, 0.2)!important;
+}
+
+.panel-transparent .panel-body{
+    background: rgba(46, 51, 56, 0.2)!important;
+}
+
+.success-box{
+    color: white;
+    background-color: #77d365;
+    border: 1px solid #509941;
+    width: 75%;
+    margin: auto;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.error-box{
+    color: white;
+    background-color: #f49789;
+    border: 1px solid #e85d47;
+    width: 75%;
+    margin: auto;
+    margin-bottom: 10px;
+    text-align: center;
+    list-style: none;
+    font-weight: bold;
+}
