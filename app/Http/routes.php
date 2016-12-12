@@ -86,3 +86,8 @@ Route::post('/addActivity', [
     'uses' => 'student_controller@postAddActivity',
     'as' => 'postAddActivity'
 ]);
+
+Route::post('/addInstructor', [
+    'uses' => 'admin_controller@addInstructor',
+    'as' => 'addInstructor'
+]);
