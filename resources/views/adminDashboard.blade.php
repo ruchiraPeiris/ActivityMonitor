@@ -103,18 +103,11 @@ Admin Dashboard
                                         </div>
 
                                         <div class="col-sm-6 myColumn">
-                                            <div class="dropdown">
-                                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                    Choose category
-                                                    <span class="caret"></span>
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                    <li><a href="#">category1</a></li>
-                                                    <li><a href="#">category2</a></li>
-                                                    <li><a href="#">category3</a></li>
-                                                    <li><a href="#">category4</a></li>
-                                                </ul>
-                                            </div>
+                                            <select id="catSelect" class="form-control" name="catSelect">
+                                                @foreach($categories as $category)
+                                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -126,18 +119,11 @@ Admin Dashboard
                                         </div>
 
                                         <div class="col-sm-6 myColumn">
-                                            <div class="dropdown">
-                                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                    Choose Module
-                                                    <span class="caret"></span>
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                    <li><a href="#">modeule1</a></li>
-                                                    <li><a href="#">module2</a></li>
-                                                    <li><a href="#">module3</a></li>
-                                                    <li><a href="#">module4</a></li>
-                                                </ul>
-                                            </div>
+                                            <select id="module" class="form-control" name="module">
+                                                @foreach($modules as $module)
+                                                <option value="{{ $module->id }}">{{ $module->name }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -246,7 +232,25 @@ Admin Dashboard
         </div>
     </div>
 
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
 
+    <script>
 
+        $(document).ready(function(){
+            $('#catSelect').on('change', function(e){
+                var cat_id = e.target.value;
+
+                $.get('/ActivityMonitor/public/dropdown?cat_id='+cat_id, function (data) {
+                    $('#module').empty();
+                    $.each(data, function (index, moduleObj) {
+                        $('#module').append('<option value="'+moduleObj.id+'">'+moduleObj.name+'</option>')
+                    });
+                });
+            });
+        });
+    </script>
 
     @endsection
