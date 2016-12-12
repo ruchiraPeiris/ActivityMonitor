@@ -44,12 +44,20 @@ class student_controller extends Controller{
 
    public function getDashboard(){
         $pendingActivityObj = array();
-        $activities = takes_part::where(['student_id' => Auth::user()->id, 'status' => 'pending'])->get();
-        foreach ($activities as $activity){
+        $approvedActivityObj = array();
+        $pActivities = takes_part::where(['student_id' => Auth::user()->id, 'status' => 'pending'])->get();
+        $aActivities = takes_part::where(['student_id' => Auth::user()->id, 'status' => 'approved'])->get();
+        foreach ($pActivities as $activity){
             $pendingAct = Activity::where('id', $activity->id)->first();
             array_push($pendingActivityObj, $pendingAct);
         }
-       return view('dashboard', ['pendingObjs' => $pendingActivityObj]);
+
+       foreach ($aActivities as $activity){
+           $acceptedAct = Activity::where('id', $activity->id)->first();
+           array_push($approvedActivityObj, $acceptedAct);
+       }
+
+       return view('dashboard', ['pendingObjs' => $pendingActivityObj, 'acceptedObjs' => $approvedActivityObj]);
    }
 
    public function getLogout(){

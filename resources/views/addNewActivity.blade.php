@@ -154,8 +154,6 @@ Add Activity
 
         $(document).ready(function(){
             $('#catSelect').on('change', function(e){
-                console.log(e);
-
                 var cat_id = e.target.value;
 
                 $.get('/ActivityMonitor/public/dropdown?cat_id='+cat_id, function (data) {

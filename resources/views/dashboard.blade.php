@@ -38,12 +38,14 @@ Dashboard
         </div>
     </div>
     <div class="container">
+        <h3 style="color: white">Pending Requests</h3>
         <div class="panel panel-danger">
-            <div class="panel-heading">Pending activities</div>
+            <div class="panel-heading">Waiting for approval</div>
             <div class="panel-body">
                 <table class="table table-striped">
                     <thead>
                     <tr>
+                        <td>#</td>
                         <td>Activity</td>
                         <td>Post</td>
                         <td>Joined Date</td>
@@ -52,10 +54,11 @@ Dashboard
                     <tbody>
                         @foreach($pendingObjs as $obj)
                         <tr>
+                            <td>{{ $obj->id }}</td>
                             <td>{{ $obj->name }}</td>
                             <td>{{ $obj->post }}</td>
                             <td>{{ $obj->joined_date }}</td>
-                            <td><button class="btn btn-sm btn-danger">Delete</button></td>
+                            <td><button class="btn btn-sm btn-danger" id="delBtn">Delete</button></td>
                         </tr>
                         @endforeach
 
@@ -67,11 +70,50 @@ Dashboard
     </div>
 
     <div class="container">
+        <h3 style="color: white">Your Activities</h3>
         <div class="panel panel-primary">
-            <div class="panel-heading">Your activities</div>
+            <div class="panel-heading">Approved activities</div>
             <div class="panel-body">
-                Accepted activities will appear here
+                <table class="table table-striped">
+                <thead>
+                <tr>
+                    <td>#</td>
+                    <td>Activity</td>
+                    <td>Post</td>
+                    <td>Joined Date</td>
+                </tr>
+
+                <tbody>
+                @foreach($acceptedObjs as $obj)
+                <tr>
+                    <td>{{ $obj->id }}</td>
+                    <td>{{ $obj->name }}</td>
+                    <td>{{ $obj->post }}</td>
+                    <td>{{ $obj->joined_date }}</td>
+
+                </tr>
+                @endforeach
+
+                </tbody>
+                </thead>
+                </table>
             </div>
         </div>
     </div>
+
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('button').click(function(){
+              /*  var row = $(this).closest('tr')[0];
+                alert(row.text());*/
+            });
+        });
+
+    </script>
+
 @endsection

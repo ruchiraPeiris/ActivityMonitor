@@ -80,6 +80,7 @@ Route::get('/dropdown', function(){
     return Response::json($modules);
 });
 
+
 Route::post('/addActivity', [
     'uses' => 'student_controller@postAddActivity',
     'as' => 'postAddActivity'
