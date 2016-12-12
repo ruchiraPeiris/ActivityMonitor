@@ -65,7 +65,29 @@ Admin Dashboard
                 <div class="panel panel-danger">
                     <div class="panel-heading">Student Requests</div>
                     <div class="panel-body">
-                        Student requests will appear here
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <td>Student ID</td>
+                                <td>Activity Name</td>
+                                <td>Posted On</td>
+                                <td>Instructor</td>
+                                <td>Action</td>
+                            </tr>
+
+                            <tbody>
+                            @foreach($pendingActivityData as $temp)
+                                <tr>
+                                @foreach($temp as $obj)
+                                    <td>{{ $obj }}</td>
+                                @endforeach
+                                    <td><button class="btn btn-sm btn-success">Approve</button>  <button class="btn btn-sm btn-danger">Cancel</button></td>
+                                </tr>
+                            @endforeach
+
+                            </tbody>
+                            </thead>
+                        </table>
                     </div>
                 </div>
 

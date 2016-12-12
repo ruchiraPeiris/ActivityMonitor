@@ -17,6 +17,7 @@ class CreateModulesTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->integer('cat_id');
+
         });
     }
 

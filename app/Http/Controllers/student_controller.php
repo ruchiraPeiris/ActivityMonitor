@@ -68,10 +68,10 @@ class student_controller extends Controller{
 
     public function register(Request $request){
         $this->validate($request, [
-            'index' => 'required',
+            'index' => 'required|unique:students,id',
             'firstname' => 'required|alpha',
             'lastname' => 'required|alpha',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:students',
             'password' => 'required'
         ]);
 
