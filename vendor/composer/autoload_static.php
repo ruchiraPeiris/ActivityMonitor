@@ -794,6 +794,7 @@ class ComposerStaticInit2555d183ad2d571cb66d098e72ad15ed
         'TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
         'categorySeeder' => __DIR__ . '/../..' . '/database/seeds/categorySeeder.php',
+        'instructor_seeder' => __DIR__ . '/../..' . '/database/seeds/instructor_seeder.php',
         'moduleSeeder' => __DIR__ . '/../..' . '/database/seeds/moduleSeeder.php',
     );
 

@@ -522,5 +522,6 @@ return array(
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
     'categorySeeder' => $baseDir . '/database/seeds/categorySeeder.php',
+    'instructor_seeder' => $baseDir . '/database/seeds/instructor_seeder.php',
     'moduleSeeder' => $baseDir . '/database/seeds/moduleSeeder.php',
 );
