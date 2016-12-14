@@ -192,30 +192,23 @@ Admin Dashboard
                                             <label for="category" class="control-label">Category</label>
                                         </div>
 
-                                        <div class="col-sm-6 myColumn">
-                                            <div class="dropdown">
-                                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                    Choose category
-                                                    <span class="caret"></span>
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                    <li><a href="#">category1</a></li>
-                                                    <li><a href="#">category2</a></li>
-                                                    <li><a href="#">category3</a></li>
-                                                    <li><a href="#">category4</a></li>
-                                                </ul>
-                                                <button class="btn btn-default">New</button>
-                                            </div>
+                                        <div class="col-sm-5 myColumn">
+                                            <select id="catSelect" class="form-control" name="catSelect">
+                                                @foreach($categories as $category)
+                                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                                @endforeach
+                                            </select>
+                                            <button id="newCatBtn" type="button" class="btn btn-sm btn-default">New</button>
                                         </div>
 
                                     </div>
                                 </div>
 
                                 <form class="form-horizontal">
-                                    <div class="form-group center-form " style="display: none">
+                                    <div id="addCatForm" class="form-group center-form " style="display: none">
                                         <div class="row">
                                             <div class="col-sm-2">
-                                                <label for="name" class="control-label">Name</label>
+                                                <label for="name" class="control-label">Category</label>
                                             </div>
 
                                             <div class="col-sm-6 myColumn">
@@ -239,18 +232,7 @@ Admin Dashboard
                                         </div>
 
                                         <div class="col-sm-6 myColumn">
-                                            <div class="dropdown">
-                                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                    Choose Module
-                                                    <span class="caret"></span>
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                    <li><a href="#">modeule1</a></li>
-                                                    <li><a href="#">module2</a></li>
-                                                    <li><a href="#">module3</a></li>
-                                                    <li><a href="#">module4</a></li>
-                                                </ul>
-                                            </div>
+                                            <input type="text" name="newModule" placeholder="Module Name" class="form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -288,6 +270,10 @@ Admin Dashboard
                         $('#module').append('<option value="'+moduleObj.id+'">'+moduleObj.name+'</option>')
                     });
                 });
+            });
+
+            $('#newCatBtn').click(function(){
+                $('#addCatForm').slideToggle();
             });
         });
     </script>
